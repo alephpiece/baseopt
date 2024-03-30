@@ -20,6 +20,7 @@ class TestOptions():
         options.add(name="test", default="on", doc="An option for testing")
 
         assert options["test"].value == "on"
+        assert options("test") == "on"
 
     def test_set_value(self):
         """Set the value of an option manually."""
@@ -29,6 +30,7 @@ class TestOptions():
         options["help"].value = True
 
         assert options["help"].value
+        assert options("help")
 
     def test_undefined_option(self):
         """Access an undefined option."""

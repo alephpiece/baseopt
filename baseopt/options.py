@@ -214,13 +214,13 @@ class BaseOptions:
     Add an option
     >>> options.add(name="help", default=False, dtype=bool)
 
-    >>> options["help"].value
+    >>> options("help")
     False
 
     Modify the value
     >>> options["help"].value = True
 
-    >>> options["help"].value
+    >>> options("help")
     True
 
     Modify other attributes of an option
@@ -232,13 +232,13 @@ class BaseOptions:
     Add a typed option
     >>> options.add(name="timeout", default="10", dtype=int)
 
-    >>> options["timeout"].value == 10
+    >>> options("timeout") == 10
     True
 
     Add a list of options
     >>> options.add_options([BaseOption(name="arg1", default="10"), BaseOption(name="arg2")])
 
-    >>> options["arg1"].value == "10"
+    >>> options("arg1") == "10"
     True
     """
 
@@ -250,6 +250,10 @@ class BaseOptions:
     def __getitem__(self, name):
         """Return a BaseOption object."""
         return self._find_opt(name)
+    
+    def __call__(self, name):
+        """Return the value of a BaseOption object."""
+        return self._find_opt(name).value
 
     def __str__(self):
         return str(self.data.items())

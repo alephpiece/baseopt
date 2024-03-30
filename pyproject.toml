@@ -4,12 +4,12 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "baseopt"
-version = "0.1.2"
+version = "0.1.3"
 authors = [
     {name = "An Wang", email = "wangan.cs@gmail.com"},
 ]
 license = {file = "LICENSE" }
-description = "Parse and manage CLI options/arguments from getopt"
+description = "A package for parsing and managing CLI options/arguments from getopt."
 readme = {file = "README.md", content-type = "text/markdown"}
 
 [project.urls]

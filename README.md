@@ -10,6 +10,11 @@ pip install baseopt
 
 ## Usage
 
+- Use `BaseOptions` to create an option list
+- Add individual `BaseOption`s to the `BaseOptions` object
+- Use `[]` of `BaseOptions` to get a `BaseOption` object
+- Use `()` of `BaseOptions` to get the value of a `BaseOption` object
+
 ```python
 import sys
 from baseopt import BaseOption, BaseOptions
@@ -35,11 +40,11 @@ options = Options()
 options.parse(sys.argv[1:])
 
 # Check if we should print a help message
-if options["help"].value:
+if options("help"):
     options.help()
     sys.exit(1)
 
-print(options["file"].value)
+print(options("file"))
 ```
 
 Executing the above script gives
