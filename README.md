@@ -1,2 +1,2 @@
 # baseopt
-A simple CLI option/argument management class.
+Parse and manage CLI options/arguments from getopt
