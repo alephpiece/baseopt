@@ -19,7 +19,7 @@ pip install baseopt
 import sys
 from baseopt import BaseOption, BaseOptions
 
-# Or you can just initialize the BaseOptions
+# You can just initialize the BaseOptions
 options = BaseOptions([
     BaseOption(name="help", shortname="h", dtype=bool, default=False),
     BaseOption(name="file", shortname="f", dtype=str, doc="Path to the input file")
